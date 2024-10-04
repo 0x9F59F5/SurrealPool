@@ -126,24 +126,3 @@ class AsyncSurrealPool:
 
 def create_pool(host, port, user, password, namespace, database):
     return AsyncSurrealPool(host, port, user, password, namespace, database, 1, 10)
-
-
-
-# async def query(self, sql: str, vars: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
-    #     client = await self._queue.get()
-    #     try:
-    #         response = await client._request(method="POST", uri="/sql", data=sql, params=vars)
-    #         return response
-    #     finally:
-    #         await self._queue.put(client)
-    #
-    # async def select(self, thing: str) -> List[Dict[str, Any]]:
-    #     table, record_id = thing.split(":") if ":" in thing else (thing, None)
-    #     client = await self._queue.get()
-    #     response = await client._request(
-    #         method="GET",
-    #         uri=f"/key/{table}/{record_id}" if record_id else f"/key/{table}",
-    #     )
-    #     if not response and record_id is not None:
-    #         raise SurrealException(f"Key {record_id} not found in table {table}")
-    #     return response[0]["result"]
