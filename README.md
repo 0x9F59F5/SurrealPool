@@ -1,1 +1,3 @@
-# SurrealHttpPool
+# SurrealPool
+
+SurrealPool is an unofficial library that supports asynchronous connection pooling for SurrealDB
