@@ -52,7 +52,7 @@ class AsyncSurrealPool:
         self._queue = asyncio.LifoQueue(maxsize=self._maxsize)
         for _ in range(self._maxsize):
             pool = SurrealHttpClient(
-                url=f"http://{self._host}:{self._port}",
+                base_url=f"http://{self._host}:{self._port}",
                 user=self._user,
                 password=self._password,
                 namespace=self._namespace,
